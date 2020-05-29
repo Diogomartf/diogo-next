@@ -8,5 +8,12 @@ export default {
     text: "#000",
     background: "#fff",
     primary: "#33e",
+    modes: {
+      dark: {
+        text: "#fff",
+        background: "#000",
+        primary: "#00ffbd",
+      },
+    },
   },
 };
