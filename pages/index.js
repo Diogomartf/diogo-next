@@ -10,8 +10,13 @@ export default function Home() {
         <title>Diogo - Thoughts on life, design and code.</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box p={5}>
-        <Flex justifyContent="flex-end">
+      <Box p={3}>
+        <Flex
+          sx={{
+            justifyContent: "space-between",
+          }}
+        >
+          <div>Home</div>
           <ToogleDarkMode />
         </Flex>
         <h1
