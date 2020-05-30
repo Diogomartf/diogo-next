@@ -1,4 +1,3 @@
-// import App from 'next/app'
 import { ThemeProvider } from "theme-ui";
 import theme from "../theme";
 import "../styles.css";
