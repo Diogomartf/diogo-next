@@ -1,3 +1,11 @@
+const colors = {
+  blackPepper: "#202020",
+  white: "#fff",
+  black: "#000",
+  brightBlue: "#33e",
+  brightGreen: "#00ffbd",
+};
+
 export default {
   fonts: {
     body: '"Inter", system-ui, sans-serif',
@@ -5,15 +13,16 @@ export default {
     monospace: "Menlo, monospace",
   },
   colors: {
-    text: "#000",
-    background: "#fff",
-    primary: "#33e",
+    text: colors.blackPepper,
+    background: colors.white,
+    primary: colors.brightBlue,
     modes: {
       dark: {
-        text: "#fff",
-        background: "#000",
-        primary: "#00ffbd",
+        text: colors.white,
+        background: colors.black,
+        primary: colors.brightGreen,
       },
     },
   },
+  space: [0, 4, 8, 16, 24, 32, 64, 128, 256, 512],
 };
