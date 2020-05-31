@@ -13,7 +13,7 @@ const Hero = () => (
     >
       Thoughts on life, code and design.
     </h1>
-    <Text sx={{ lineHeight: "160%", fontSize: 3 }}>
+    <Text sx={{ lineHeight: "160%", fontSize: [2, 3] }}>
       I'm Diogo Ferreira, a Full-stack web developer and designer. Currently
       working as Frontend web developer and designer at Q-Better.
     </Text>
