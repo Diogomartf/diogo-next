@@ -1,9 +1,9 @@
 ---
-title: "Hello world"
+title: "Hello blog"
 date: "13-09-2020"
 ---
 
-# Hello world
+# Hello Blog
 
 This is the first post I'm writting.
 

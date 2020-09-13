@@ -1,9 +1,7 @@
 import Hero from "../components/Hero";
-import Container from "../components/Container";
-import Header from "../components/Header";
 import { getSortedPostsData } from "../lib/posts";
-import { Flex, Box } from "theme-ui";
-import Link from "next/link";
+import { Box, Text, Link } from "theme-ui";
+import NextLink from "next/link";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -16,24 +14,24 @@ export async function getStaticProps() {
 
 const Home = ({ allPostsData }) => (
   <>
-    <Container>
-      <Header></Header>
-      <Hero />
-      <h3>blog</h3>
-      <ul>
-        {allPostsData.map(({ id, date, title }) => (
-          <Box my={2} key={id}>
-            <Link href="/blog/[id]" as={`/blog/${id}`}>
-              <Flex>
-                <Box>{title}</Box>
-                {" - "}
-                <Box>{date}</Box>
-              </Flex>
-            </Link>
-          </Box>
-        ))}
-      </ul>
-    </Container>
+    <Hero />
+    <Text sx={{ fontSize: 3 }}>Writting</Text>
+    <Text sx={{ fontSize: 2 }} my={2}>
+      I try to follow my curiousity which lately has been around{" "}
+      <code>computers</code>, <code>systems</code> and <code>how to live</code>.
+    </Text>
+    <Box my={3}>
+      {allPostsData.map(({ id, date, title }) => (
+        <Box my={2} key={id}>
+          <NextLink href="/blog/[id]" as={`/blog/${id}`}>
+            <Link variant="links.blog">{title}</Link>
+          </NextLink>
+          <Text variant="dates" my={1}>
+            {date}
+          </Text>
+        </Box>
+      ))}
+    </Box>
   </>
 );
 
