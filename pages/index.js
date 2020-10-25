@@ -10,16 +10,6 @@ export async function getStaticProps() {
       allPostsData,
     },
   };
-
-export default function Home() {
-  return (
-    <>
-      <Container>
-        <Header></Header>
-        <Hero />
-      </Container>
-    </>
-  );
 }
 
 const Home = ({ allPostsData }) => (
