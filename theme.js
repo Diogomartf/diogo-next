@@ -26,7 +26,7 @@ export default {
   colors: {
     text: colors.blackPepper,
     background: colors.white,
-    primary: colors.brightBlue,
+    primary: "#525B5B",
     grays: colors.grays,
     secondary: colors.orange,
     modes: {
@@ -54,10 +54,11 @@ export default {
       cursor: "pointer",
     },
     blog: {
-      fontSize: 3,
+      fontSize: 2,
+      textDecoration: "underline",
       variant: "links.default",
       fontWeight: "semibold",
-      color: "secondary",
+      color: "primary",
     },
     nav: {
       variant: "links.default",

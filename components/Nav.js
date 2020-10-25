@@ -1,20 +1,27 @@
 /** @jsx jsx */
-import { jsx, Flex, Link } from "theme-ui";
+import { jsx, Flex, Link, Box } from "theme-ui";
 import ToogleDarkMode from "./ToogleDarkMode";
 import NextLink from "next/link";
 
 const Nav = () => (
-  <Flex
-    sx={{
-      alignItems: "center",
-      justifyContent: "space-between",
-    }}
-  >
-    <NextLink href="/">
-      <Link variant="links.nav">Home</Link>
-    </NextLink>
-    <ToogleDarkMode />
-  </Flex>
+  <Box p={[4]}>
+    <Flex
+      sx={{
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}
+    >
+      <NextLink href="/">
+        <Link
+          className="circle-logo"
+          sx={{
+            cursor: "pointer",
+          }}
+        ></Link>
+      </NextLink>
+      <ToogleDarkMode />
+    </Flex>
+  </Box>
 );
 
 export default Nav;

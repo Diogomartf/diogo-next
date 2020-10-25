@@ -2,28 +2,25 @@
 import { jsx, Box, Text } from "theme-ui";
 
 const Hero = () => (
-  <Box py={[5, 6]}>
+  <>
     <h1
+      className="gradient-text"
       sx={{
         fontWeight: "regular",
-        fontSize: [4, 5],
+        fontSize: [3, 4],
         color: "primary",
-        my: 3,
+        my: 1,
       }}
     >
-      Hello. I'm Diogo.
+      Diogo Ferreira
     </h1>
-    <Text sx={{ lineHeight: "160%", fontSize: [2, 3] }}>
-      I'm a Portuguese Full-stack web developer.
-    </Text>
-    <Text sx={{ lineHeight: "160%", fontSize: [2, 3] }}>
-      Currently writting react apps at Q-Better.
-    </Text>
-    <Text sx={{ lineHeight: "160%", fontSize: [2, 3] }} my={[2, 3]}>
-      I try to follow my curiousity which lately has been around{" "}
-      <code>computers</code>, <code>systems</code>, <code>how to live</code>.
-    </Text>
-  </Box>
+    <Box my={1}>
+      <Text sx={{ fontSize: [1, 2] }}>
+        Curious. Thinker. Distracted. Stubborn.
+      </Text>
+      <Text sx={{ fontSize: [1, 2] }}>Born in 93.</Text>
+    </Box>
+  </>
 );
 
 export default Hero;
