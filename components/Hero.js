@@ -19,6 +19,10 @@ const Hero = () => (
     <Text sx={{ lineHeight: "160%", fontSize: [2, 3] }}>
       Currently writting react apps at Q-Better.
     </Text>
+    <Text sx={{ lineHeight: "160%", fontSize: [2, 3] }} my={[2, 3]}>
+      I try to follow my curiousity which lately has been around{" "}
+      <code>computers</code>, <code>systems</code>, <code>how to live</code>.
+    </Text>
   </Box>
 );
 
