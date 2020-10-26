@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx, Flex, Link, Box } from "theme-ui";
-import ToogleDarkMode from "./ToogleDarkMode";
 import NextLink from "next/link";
 
+import ToogleDarkMode from "./ToogleDarkMode";
+import Container from "./Container";
+
 const Nav = () => (
-  <Box p={[4]} sx={{ maxWidth: ["100%", "600px", "780px"], margin: "auto" }}>
+  <Container py={4}>
     <Flex
       sx={{
         alignItems: "center",
@@ -21,7 +23,7 @@ const Nav = () => (
       </NextLink>
       <ToogleDarkMode />
     </Flex>
-  </Box>
+  </Container>
 );
 
 export default Nav;
