@@ -4,7 +4,7 @@ import ToogleDarkMode from "./ToogleDarkMode";
 import NextLink from "next/link";
 
 const Nav = () => (
-  <Box p={[4]}>
+  <Box p={[4]} sx={{ maxWidth: ["100%", "600px", "780px"], margin: "auto" }}>
     <Flex
       sx={{
         alignItems: "center",

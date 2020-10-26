@@ -18,7 +18,7 @@ export async function getStaticProps() {
 }
 
 const Home = ({ allPostsData }) => (
-  <Box mx={4}>
+  <Box px={4} sx={{ maxWidth: ["100%", "600px", "780px"], margin: "auto" }}>
     <Box py={[2, 3]} my={[2, 3]}>
       <Hero />
     </Box>
