@@ -54,7 +54,7 @@ export default {
       cursor: "pointer",
     },
     blog: {
-      fontSize: 2,
+      fontSize: [2, 3],
       textDecoration: "underline",
       variant: "links.default",
       fontWeight: "semibold",
