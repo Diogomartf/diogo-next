@@ -5,7 +5,6 @@ import { getSortedPostsData } from "../lib/posts";
 
 import Hero from "../components/Hero";
 import Blog from "../components/Blog";
-import AskMe from "../components/AskMe";
 import Footer from "../components/Footer";
 import Container from "../components/Container";
 
@@ -20,16 +19,15 @@ export async function getStaticProps() {
 
 const Home = ({ allPostsData }) => (
   <Container>
-    <Box py={[2]} my={[2, 3]}>
+    <Box my={[5, 6]}>
       <Hero />
     </Box>
-    <Box py={[2]} my={[2, 3]}>
+    <Box my={[5, 6]}>
       <Blog allPostsData={allPostsData} />
     </Box>
-    <Box py={[2]} my={[2, 3]}>
-      <AskMe />
+    <Box my={[5, 6]}>
+      <Footer />
     </Box>
-    <Footer />
   </Container>
 );
 

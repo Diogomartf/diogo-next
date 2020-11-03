@@ -6,7 +6,7 @@ import ToogleDarkMode from "./ToogleDarkMode";
 import Container from "./Container";
 
 const Nav = () => (
-  <Container py={4}>
+  <Container>
     <Flex
       sx={{
         alignItems: "center",

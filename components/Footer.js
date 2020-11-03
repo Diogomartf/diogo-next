@@ -2,31 +2,25 @@
 import { jsx, Box, Link } from "theme-ui";
 
 const Footer = () => (
-  <Box mt={6} mb={4}>
-    <Link
-      href="mailto:diogomf@hey.com"
-      mr={2}
-      sx={{ fontSize: [1, 2], color: "#353535" }}
-    >
-      Email
+  <>
+    <Link href="mailto:diogomf@hey.com" variant="links.footer">
+      diogomf@hey.com
     </Link>
     <Link
       target="_blank"
       href="https://twitter.com/diogomartf"
-      mr={2}
-      sx={{ fontSize: [1, 2], color: "#353535" }}
+      variant="links.footer"
     >
       Twitter
     </Link>
     <Link
       target="_blank"
       href="https://github.com/Diogomartf"
-      mr={2}
-      sx={{ fontSize: [1, 2], color: "#353535" }}
+      variant="links.footer"
     >
       Github
     </Link>
-  </Box>
+  </>
 );
 
 export default Footer;
