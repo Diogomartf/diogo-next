@@ -1,20 +1,19 @@
 import PropTypes from "prop-types";
 import { Box } from "theme-ui";
 
-function Container({ children }) {
-  return (
-    <Box
-      sx={{
-        px: [4, 0],
-        py: [3],
-        mx: "auto",
-        maxWidth: ["100%", "800px"],
-      }}
-    >
-      {children}
-    </Box>
-  );
-}
+const Container = ({ children, ...props }) => (
+  <Box
+    Box
+    {...props}
+    sx={{
+      px: 4,
+      mx: "auto",
+      maxWidth: ["100%", "600px", "780px"],
+    }}
+  >
+    {children}
+  </Box>
+);
 
 Container.propTypes = {
   children: PropTypes.oneOfType([

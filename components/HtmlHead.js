@@ -2,7 +2,7 @@ import Head from "next/head";
 
 const HtmlHead = () => (
   <Head>
-    <title>Diogo - Thoughts on life, design and code.</title>
+    <title>Diogo Ferreira - Curious thinker</title>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Diogo Ferreira" />
@@ -15,8 +15,8 @@ const HtmlHead = () => (
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
-    <meta name="msapplication-TileColor" content="#FFA592" />
-    <meta name="theme-color" content="#FFA592"></meta>
+    <meta name="msapplication-TileColor" content="#D6D6D6" />
+    <meta name="theme-color" content="#D6D6D6"></meta>
   </Head>
 );
 

@@ -10,3 +10,16 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.gradient-text {
+  background: linear-gradient(90deg, #616161 0%, #9bc5c3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.circle-logo {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #616161 0%, #9bc5c3 100%);
+}
