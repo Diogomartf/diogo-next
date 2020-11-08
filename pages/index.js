@@ -1,29 +1,35 @@
 /** @jsx jsx */
-
-import { jsx, Box } from "theme-ui";
-import { getSortedPostsData } from "../lib/posts";
+import { jsx, Box, Text } from "theme-ui";
+import { getAllPosts } from "../lib/posts";
 
 import Hero from "../components/Hero";
-import Blog from "../components/Blog";
+import BlogEntries from "../components/BlogEntries";
 import Footer from "../components/Footer";
 import Container from "../components/Container";
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const posts = await getAllPosts();
+
   return {
     props: {
-      allPostsData,
+      entries: posts.map((post) => post.slug),
     },
   };
 }
 
-const Home = ({ allPostsData }) => (
+const Home = ({ entries }) => (
   <Container>
     <Box my={[5, 6]}>
-      <Hero />
+      <Hero title="Diogo Ferreira">
+        <>
+          <Text variant="small">Curious. Thinker. Distracted. Stubborn.</Text>
+          <Text variant="small">Born in 93.</Text>
+        </>
+      </Hero>
     </Box>
     <Box my={[5, 6]}>
-      <Blog allPostsData={allPostsData} />
+      <Text variant="midTitle">Free thoughts</Text>
+      <BlogEntries entries={entries} />
     </Box>
     <Box my={[5, 6]}>
       <Footer />

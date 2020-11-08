@@ -1,10 +1,6 @@
----
-title: "Hello blog"
-date: "13-09-2020"
----
+# Hello MDX
 
-# Hello Blog
-
+<div style={{color: "red"}}>This should be red</div>
 This is the first post I'm writting.
 
 That's exciting.

@@ -21,7 +21,21 @@ const Nav = () => (
           }}
         ></Link>
       </NextLink>
-      <ToogleDarkMode />
+      <Flex>
+        <NextLink href="/blog" passHref>
+          <Link
+            variant="text.midTitle"
+            sx={{
+              textDecoration: "none",
+              cursor: "pointer",
+              mr: [3, 4],
+            }}
+          >
+            Blog
+          </Link>
+        </NextLink>
+        <ToogleDarkMode />
+      </Flex>
     </Flex>
   </Container>
 );

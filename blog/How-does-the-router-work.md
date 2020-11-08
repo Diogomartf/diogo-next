@@ -1,8 +1,3 @@
----
-title: "How does the Router work"
-date: "26-10-2020"
----
-
 # How does the Router work
 
 This is the first post I'm writting.

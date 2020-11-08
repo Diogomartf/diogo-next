@@ -1,8 +1,3 @@
----
-title: "How we store energy?"
-date: "31-10-2020"
----
-
 # How we store energy?
 
 This is the first post I'm writting.

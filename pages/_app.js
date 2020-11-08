@@ -6,6 +6,7 @@ import HtmlHead from "../components/HtmlHead";
 
 import theme from "../theme";
 import "../styles.css";
+import MDX from "../components/MDX";
 
 const app = ({ Component, pageProps }) => (
   <ThemeProvider theme={theme}>
@@ -13,7 +14,9 @@ const app = ({ Component, pageProps }) => (
     <Box py={3}>
       <Nav />
     </Box>
-    <Component {...pageProps} />
+    <MDX>
+      <Component {...pageProps} />
+    </MDX>
   </ThemeProvider>
 );
 
