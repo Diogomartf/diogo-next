@@ -1,25 +1,34 @@
+import React from "react";
 import ReactDOMServer from "react-dom/server";
-import Container from "../../components/Container";
-import { getAllPosts } from "../../lib/posts";
-// import Head from "next/head";
 import MDX from "../../components/MDX";
+import Container from "../../components/Container";
+import { getAllPosts, getSerializeableFrontmatter } from "../../lib/posts";
+import Hero from "../../components/Hero";
+import { Box, Text } from "theme-ui";
 
-export default function Post({ content }) {
+export default function Post({ frontmatter, content }) {
   return (
     <Container>
+      <Box my={[5, 6]}>
+        <Hero title={frontmatter.title}>
+          <Text variant="small">{frontmatter.excerpt}</Text>
+        </Hero>
+      </Box>
       <article dangerouslySetInnerHTML={{ __html: content }} />
     </Container>
   );
 }
 
 export async function getStaticProps(context) {
-  const posts = await getAllPosts();
-  const post = posts.find((post) => post.slug === context.params.post);
+  const post = (await getAllPosts()).find(
+    (post) => post.frontmatter.slug === context.params.post
+  );
 
-  const { MDXContent } = post;
+  const { frontmatter, MDXContent } = post;
 
   return {
     props: {
+      frontmatter: getSerializeableFrontmatter(frontmatter),
       content: ReactDOMServer.renderToStaticMarkup(
         <MDX>
           <MDXContent />
@@ -33,7 +42,7 @@ export async function getStaticPaths() {
   const posts = await getAllPosts();
 
   const slugs = posts.map((post) => ({
-    params: { post: post.slug },
+    params: { post: post.frontmatter.slug },
   }));
 
   return {

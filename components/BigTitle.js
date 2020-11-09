@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { Text, jsx } from "theme-ui";
+import { Text } from "theme-ui";
 
 const BigTitle = ({ children }) => (
   <Text

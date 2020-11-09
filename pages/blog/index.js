@@ -1,42 +1,77 @@
-import { Box } from "theme-ui";
-import BigTitle from "../../components/BigTitle";
-import BlogEntries from "../../components/BlogEntries";
+import { Box, Text, Link } from "theme-ui";
 import Container from "../../components/Container";
 import Hero from "../../components/Hero";
-import { getAllPosts } from "../../lib/posts";
+import { getAllPosts, getSerializeableFrontmatter } from "../../lib/posts";
+import NextLink from "next/link";
+import Footer from "../../components/Footer";
 
-export default function Blog({ entries }) {
+export default function Blog({ posts }) {
   return (
     <Container>
       <Box my={[5, 6]}>
-        <Hero title="Free Thoughts" />
+        <Hero title="Free Thoughts">
+          <Text variant="small">My journal.</Text>
+          <Text variant="small">
+            Life decisions. Curiosities. Software. Experiences.
+          </Text>
+        </Hero>
       </Box>
+      {Object.keys(posts)
+        .reverse()
+        .map((year) => (
+          <Box key={year} my={[4, 5]}>
+            <Text variant="midTitle">{year}</Text>
+            {posts[year] &&
+              posts[year].map((post) => (
+                <NextLink
+                  href="/blog/[post]"
+                  as={`/blog/${post.slug}`}
+                  key={post.slug}
+                  passHref
+                >
+                  <Link variant="card.blog" w={1} h={1}>
+                    <Text variant="blog">{post.title}</Text>
+                    <Text variant="small" my={1}>
+                      {post.date}
+                    </Text>
+                  </Link>
+                </NextLink>
+              ))}
+          </Box>
+        ))}
       <Box my={[5, 6]}>
-        <BlogEntries entries={entries} />
+        <Footer />
       </Box>
     </Container>
   );
 }
 
-export async function getStaticProps() {
-  const posts = await getAllPosts();
+export async function getStaticProps(context) {
+  const entries = {};
+
+  const posts = (await getAllPosts()).map((post) =>
+    getSerializeableFrontmatter(post.frontmatter)
+  );
+
+  const years = new Set(posts.map((post) => new Date(post.date).getFullYear()));
+
+  years.forEach((year) => {
+    entries[year] = new Array();
+  });
+
+  posts.forEach((post) =>
+    entries[new Date(post.date).getFullYear()].push(post)
+  );
+
+  years.forEach((year) => {
+    entries[year] = entries[year].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+  });
 
   return {
     props: {
-      entries: posts.map((post) => post.slug),
+      posts: entries,
     },
-  };
-}
-
-export async function getStaticPaths() {
-  const posts = await getAllPosts();
-
-  const slugs = posts.map((post) => ({
-    params: { post: post.slug },
-  }));
-
-  return {
-    paths: slugs,
-    fallback: false,
   };
 }
