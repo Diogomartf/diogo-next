@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Box, Link } from "theme-ui";
+import { Link } from "theme-ui";
 
 const Footer = () => (
   <>

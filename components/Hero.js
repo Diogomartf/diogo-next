@@ -1,15 +1,10 @@
-/** @jsx jsx */
-import { jsx, Box, Text } from "theme-ui";
+import { Box } from "theme-ui";
+import BigTitle from "./BigTitle";
 
-const Hero = () => (
+const Hero = ({ title, children }) => (
   <>
-    <Text className="gradient-text" variant="bigTitle">
-      Diogo Ferreira
-    </Text>
-    <Box my={2}>
-      <Text variant="small">Curious. Thinker. Distracted. Stubborn.</Text>
-      <Text variant="small">Born in 93.</Text>
-    </Box>
+    <BigTitle>{title}</BigTitle>
+    {children && <Box my={2}>{children}</Box>}
   </>
 );
 

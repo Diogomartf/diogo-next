@@ -9,12 +9,17 @@
     "next-start": "next start"
   },
   "dependencies": {
-    "gray-matter": "^4.0.2",
+    "@mapbox/rehype-prism": "^0.5.0",
+    "@mdx-js/loader": "^1.6.21",
+    "@next/mdx": "^10.0.1",
+    "fs": "0.0.1-security",
     "next": "^10.0.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "remark": "^12.0.1",
-    "remark-html": "^12.0.0",
-    "theme-ui": "^0.3.1"
+    "react": "17.0.1",
+    "react-dom": "^17.0.1",
+    "remark-frontmatter": "^2.0.0",
+    "theme-ui": "^0.3.3",
+    "unist-util-remove": "^2.0.1",
+    "unist-util-visit": "^2.0.3",
+    "yaml": "^1.10.0"
   }
 }

@@ -1,0 +1,6 @@
+.circle-logo {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #616161 0%, #9bc5c3 100%);
+}

@@ -1,10 +1,9 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
 import { useColorMode } from "theme-ui";
+
 import MoonIcon from "../icons/MoonIcon";
 import SunIcon from "../icons/SunIcon";
 
-export default () => {
+const ToggleDarkMode = () => {
   const [colorMode, setColorMode] = useColorMode();
   return (
     <header>
@@ -21,3 +20,5 @@ export default () => {
     </header>
   );
 };
+
+export default ToggleDarkMode;
