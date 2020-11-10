@@ -2,10 +2,12 @@ import { Box, ThemeProvider } from "theme-ui";
 
 import "../styles.css";
 import theme from "../theme";
+
 import Nav from "../components/Nav";
 import HtmlHead from "../components/HtmlHead";
 import MDX from "../components/MDX";
 import Container from "../components/Container";
+import Footer from "../components/Footer";
 
 const app = ({ Component, pageProps }) => (
   <ThemeProvider theme={theme}>
@@ -18,6 +20,11 @@ const app = ({ Component, pageProps }) => (
     <MDX>
       <Component {...pageProps} />
     </MDX>
+    <Container>
+      <Box my={[5, 6]}>
+        <Footer />
+      </Box>
+    </Container>
   </ThemeProvider>
 );
 

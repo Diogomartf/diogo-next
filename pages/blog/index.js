@@ -1,9 +1,10 @@
 import { Box, Text, Link } from "theme-ui";
+import NextLink from "next/link";
+
+import { getAllPosts, getSerializeableFrontmatter } from "../../lib/posts";
+
 import Container from "../../components/Container";
 import Hero from "../../components/Hero";
-import { getAllPosts, getSerializeableFrontmatter } from "../../lib/posts";
-import NextLink from "next/link";
-import Footer from "../../components/Footer";
 
 export default function Blog({ posts }) {
   return (
@@ -39,9 +40,6 @@ export default function Blog({ posts }) {
               ))}
           </Box>
         ))}
-      <Box my={[5, 6]}>
-        <Footer />
-      </Box>
     </Container>
   );
 }

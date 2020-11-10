@@ -14,7 +14,9 @@ export default function Post({ frontmatter, content }) {
           <Text variant="small">{frontmatter.excerpt}</Text>
         </Hero>
       </Box>
-      <article dangerouslySetInnerHTML={{ __html: content }} />
+      <Box pb={[4, 5]}>
+        <article dangerouslySetInnerHTML={{ __html: content }} />
+      </Box>
     </Container>
   );
 }

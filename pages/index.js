@@ -3,7 +3,6 @@ import { Box, Text, Link } from "theme-ui";
 import { getAllPosts, getSerializeableFrontmatter } from "../lib/posts";
 
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
 import Container from "../components/Container";
 import NextLink from "next/link";
 
@@ -32,9 +31,6 @@ const Home = ({ posts }) => (
           </Link>
         </NextLink>
       ))}
-    </Box>
-    <Box my={[5, 6]}>
-      <Footer />
     </Box>
   </Container>
 );

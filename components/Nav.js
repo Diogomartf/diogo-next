@@ -2,7 +2,6 @@ import { Flex, Link } from "theme-ui";
 import NextLink from "next/link";
 
 import ToogleDarkMode from "./ToogleDarkMode";
-import Container from "./Container";
 
 const Nav = () => (
   <Flex
