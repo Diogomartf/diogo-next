@@ -31,6 +31,18 @@ const Nav = () => (
           Blog
         </Link>
       </NextLink>
+      <NextLink href="/about" passHref>
+        <Link
+          variant="text.midTitle"
+          sx={{
+            textDecoration: "none",
+            cursor: "pointer",
+            mr: [3, 4],
+          }}
+        >
+          About
+        </Link>
+      </NextLink>
       <ToogleDarkMode />
     </Flex>
   </Flex>
