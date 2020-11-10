@@ -35,9 +35,11 @@ const Home = ({ posts }) => (
   </Container>
 );
 
+const NUMBER_OF_POSTS = 5;
+
 export async function getStaticProps() {
   const posts = (await getAllPosts())
-    .slice(0, 10)
+    .slice(0, NUMBER_OF_POSTS)
     .map((post) => getSerializeableFrontmatter(post.frontmatter));
 
   return {

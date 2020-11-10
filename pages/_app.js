@@ -1,7 +1,7 @@
 import { Box, ThemeProvider } from "theme-ui";
 
 import "../styles/main.css";
-import theme from "../theme";
+import theme from "../styles/theme";
 
 import Nav from "../components/Nav";
 import HtmlHead from "../components/HtmlHead";

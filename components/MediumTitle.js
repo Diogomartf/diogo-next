@@ -1,11 +1,10 @@
 import { Text } from "theme-ui";
 
-const BigTitle = ({ children }) => (
+const MediumTitle = ({ children }) => (
   <Text
-    className="gradient-text"
     sx={{
       my: [2, 3],
-      fontSize: [4, 5],
+      fontSize: [3, 4],
       fontWeight: "bold",
     }}
   >
@@ -13,4 +12,4 @@ const BigTitle = ({ children }) => (
   </Text>
 );
 
-export default BigTitle;
+export default MediumTitle;
