@@ -11,19 +11,6 @@ body {
   box-sizing: border-box;
 }
 
-.circle-logo {
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
-  background: linear-gradient(90deg, #616161 0%, #9bc5c3 100%);
-}
-
-.gradient-text {
-  background: linear-gradient(90deg, #616161 0%, #9bc5c3 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 blockquote {
   border-left: 8px solid #aec2c2;
   margin: 16px 0;
@@ -35,4 +22,8 @@ blockquote {
 
 blockquote p {
   display: inline;
+}
+
+a {
+  color: #0263ff;
 }

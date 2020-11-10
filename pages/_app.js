@@ -1,6 +1,6 @@
 import { Box, ThemeProvider } from "theme-ui";
 
-import "../styles.css";
+import "../styles/main.css";
 import theme from "../theme";
 
 import Nav from "../components/Nav";
