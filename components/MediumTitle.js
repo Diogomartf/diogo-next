@@ -5,7 +5,7 @@ const MediumTitle = ({ children }) => (
     sx={{
       my: [2, 3],
       fontSize: [3, 4],
-      fontWeight: "bold",
+      fontWeight: "semibold",
     }}
   >
     {children}
