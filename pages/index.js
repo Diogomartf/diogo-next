@@ -10,8 +10,7 @@ const Home = ({ posts }) => (
   <Container>
     <Box my={[5, 6]}>
       <Hero title="Diogo Ferreira">
-        <Text variant="small">Curious. Thinker. Distracted. Stubborn.</Text>
-        <Text variant="small">Born in 93.</Text>
+        <Text variant="small">Curious. Stubborn.</Text>
       </Hero>
     </Box>
     <Box my={[5, 6]}>

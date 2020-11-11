@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOMServer from "react-dom/server";
 import MDX from "../../components/MDX";
 import Container from "../../components/Container";
@@ -11,6 +10,9 @@ export default function Post({ frontmatter, content }) {
     <Container>
       <Box my={[5, 6]}>
         <Hero title={frontmatter.title}>
+          <Text variant="small" my={1}>
+            {frontmatter.date}
+          </Text>
           <Text variant="small">{frontmatter.excerpt}</Text>
         </Hero>
       </Box>

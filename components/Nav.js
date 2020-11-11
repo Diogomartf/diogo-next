@@ -18,7 +18,11 @@ const Nav = () => (
         }}
       ></Link>
     </NextLink>
-    <Flex>
+    <Flex
+      sx={{
+        alignItems: "center",
+      }}
+    >
       <NextLink href="/blog" passHref>
         <Link
           variant="text.midTitle"
