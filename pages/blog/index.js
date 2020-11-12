@@ -1,4 +1,5 @@
 import { Box, Text, Link } from "theme-ui";
+import Head from "next/head";
 import NextLink from "next/link";
 
 import { getAllPosts, getSerializeableFrontmatter } from "../../lib/posts";
@@ -9,12 +10,13 @@ import Hero from "../../components/Hero";
 export default function Blog({ posts }) {
   return (
     <Container>
+      <Head>
+        <title>{`Blog | Diogo Ferreira`}</title>
+      </Head>
       <Box my={[5, 6]}>
-        <Hero title="Free Thoughts">
+        <Hero title="Thoughts">
           <Text variant="small">My journal.</Text>
-          <Text variant="small">
-            Life decisions. Curiosities. Software. Experiences.
-          </Text>
+          <Text variant="small">Life decisions. Curiosities. Experiences.</Text>
         </Hero>
       </Box>
       {Object.keys(posts)

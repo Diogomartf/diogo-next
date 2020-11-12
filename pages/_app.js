@@ -1,31 +1,25 @@
-import { Box, ThemeProvider } from "theme-ui";
+import { ThemeProvider } from "theme-ui";
 
 import "../styles/main.css";
 import theme from "../styles/theme";
 
-import Nav from "../components/Nav";
 import HtmlHead from "../components/HtmlHead";
 import MDX from "../components/MDX";
-import Container from "../components/Container";
-import Footer from "../components/Footer";
+import SocialMetaTags from "../components/SocialMetaTags";
+import Layout from "../components/Layout";
 
-const app = ({ Component, pageProps }) => (
-  <ThemeProvider theme={theme}>
-    <HtmlHead />
-    <Container>
-      <Box py={3}>
-        <Nav />
-      </Box>
-    </Container>
-    <MDX>
-      <Component {...pageProps} />
-    </MDX>
-    <Container>
-      <Box my={[5, 6]}>
-        <Footer />
-      </Box>
-    </Container>
-  </ThemeProvider>
-);
+const app = ({ Component, pageProps }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <HtmlHead />
+      <SocialMetaTags />
+      <Layout>
+        <MDX>
+          <Component {...pageProps} />
+        </MDX>
+      </Layout>
+    </ThemeProvider>
+  );
+};
 
 export default app;

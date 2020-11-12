@@ -4,9 +4,10 @@ const BigTitle = ({ children }) => (
   <Text
     className="gradient-text"
     sx={{
-      my: [2, 3],
-      fontSize: [4, 5],
       fontWeight: "bold",
+      fontSize: [4, 5],
+      mt: [3, 4],
+      mb: [2, 3],
     }}
   >
     {children}

@@ -13,17 +13,18 @@ body {
 
 blockquote {
   border-left: 8px solid #aec2c2;
-  margin: 16px 0;
+  margin: 24px 0;
   padding: 0 12px;
-  quotes: "\201C""\201D""\2018""\2019";
   font-style: italic;
   border-radius: 4px;
 }
 
-blockquote p {
-  display: inline;
+a {
+  color: #617d7d;
 }
 
-a {
-  color: #0263ff;
+@media only screen and (min-width: 600px) {
+  blockquote {
+    margin: 42px 0;
+  }
 }

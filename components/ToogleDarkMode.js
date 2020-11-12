@@ -5,6 +5,7 @@ import SunIcon from "../icons/SunIcon";
 
 const ToggleDarkMode = () => {
   const [colorMode, setColorMode] = useColorMode();
+
   return (
     <header>
       <div
@@ -15,7 +16,11 @@ const ToggleDarkMode = () => {
           setColorMode(colorMode === "default" ? "dark" : "default");
         }}
       >
-        {colorMode === "default" ? <MoonIcon /> : <SunIcon />}
+        {colorMode === "default" || colorMode === "light" ? (
+          <MoonIcon />
+        ) : (
+          <SunIcon />
+        )}
       </div>
     </header>
   );
