@@ -2,13 +2,13 @@ import Head from "next/head";
 
 const HtmlHead = () => (
   <Head>
-    <title>Diogo Ferreira - Curious thinker</title>
+    <title>Diogo Ferreira | Curious. Thinker. Programmer.</title>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Diogo Ferreira" />
     <meta
       name="description"
-      content="I’m Diogo, a Software Engineer currently living in Braga, Portugal."
+      content="I write about things I'm curious about be it life experiences, products, code, design or stuff related to the mind."
     />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

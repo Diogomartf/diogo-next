@@ -1,14 +1,24 @@
 import ReactDOMServer from "react-dom/server";
+import Head from "next/head";
 import { Box, Text } from "theme-ui";
 
 import { getAllPosts, getSerializeableFrontmatter } from "../../lib/posts";
 
 import MDX from "../../components/MDX";
+import SocialMetaTags from "../../components/SocialMetaTags";
 import Container from "../../components/Container";
 import Hero from "../../components/Hero";
 
 const Post = ({ frontmatter, content }) => (
   <Container>
+    <Head>
+      <title>{`${frontmatter.title} | Diogo Ferreira`}</title>
+    </Head>
+    <SocialMetaTags
+      title={frontmatter.title}
+      description={frontmatter.excerpt}
+      image={frontmatter.image}
+    />
     <Box my={[5, 6]}>
       <Hero title={frontmatter.title}>
         <Text variant="small" my={1}>

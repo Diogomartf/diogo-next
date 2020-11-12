@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 import { Box, Text, Link } from "theme-ui";
 
 import { getAllPosts, getSerializeableFrontmatter } from "../lib/posts";
@@ -13,11 +11,11 @@ const Home = ({ posts }) => {
     <Container>
       <Box my={[5, 6]}>
         <Hero title="Diogo Ferreira">
-          <Text variant="small">Curious. Stubborn.</Text>
+          <Text variant="small">Thinker. Programmer.</Text>
         </Hero>
       </Box>
       <Box my={[5, 6]}>
-        <Text variant="midTitle">Free thoughts</Text>
+        <Text variant="midTitle">Thoughts</Text>
         {posts.map((post) => (
           <NextLink
             href="/blog/[post]"
