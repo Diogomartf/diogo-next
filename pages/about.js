@@ -2,6 +2,7 @@ import { Box, Text, Grid } from "theme-ui";
 import Head from "next/head";
 import Image from "next/image";
 
+import SocialMetaTags from "../components/SocialMetaTags";
 import Hero from "../components/Hero";
 import Container from "../components/Container";
 import NormalText from "../components/NomalText";
@@ -11,6 +12,11 @@ const About = () => (
     <Head>
       <title>{`About | Diogo Ferreira`}</title>
     </Head>
+    <SocialMetaTags
+      title="Hey! I'm Diogo"
+      image="/images/about/diogo-camisa.jpg"
+      description="I'm a portuguese programmer and (aspiring) designer. I like to think of myself as curious."
+    />
     <Box mt={[5, 6]}>
       <Hero title="About">
         <Text variant="small">Curious. Stubborn. Talktive.</Text>
