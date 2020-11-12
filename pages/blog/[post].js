@@ -19,7 +19,7 @@ const Post = ({ frontmatter, content }) => (
       description={frontmatter.excerpt}
       image={frontmatter.image}
     />
-    <Box my={[5, 6]}>
+    <Box mt={[5, 6]} mb={[3, 4]}>
       <Hero title={frontmatter.title}>
         <Text variant="small" my={1}>
           {frontmatter.date}

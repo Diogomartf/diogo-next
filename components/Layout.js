@@ -7,11 +7,7 @@ import Footer from "./Footer";
 const Layout = ({ children }) => {
   return (
     <>
-      <Container>
-        <Box py={3}>
-          <Nav />
-        </Box>
-      </Container>
+      <Nav />
       {children}
       <Container>
         <Box my={[5, 6]}>

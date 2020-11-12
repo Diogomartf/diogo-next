@@ -6,7 +6,8 @@ const BigTitle = ({ children }) => (
     sx={{
       fontWeight: "bold",
       fontSize: [4, 5],
-      my: [2, 3],
+      mt: [3, 4],
+      mb: [2, 3],
     }}
   >
     {children}

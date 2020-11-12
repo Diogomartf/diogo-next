@@ -11,13 +11,13 @@ const About = () => (
     <Head>
       <title>{`About | Diogo Ferreira`}</title>
     </Head>
-    <Box mt={[5, 6]} mb={0}>
+    <Box mt={[5, 6]}>
       <Hero title="About">
         <Text variant="small">Curious. Stubborn. Talktive.</Text>
         <Text variant="small">Born in 93.</Text>
       </Hero>
     </Box>
-    <Box my={[2, 3]}>
+    <Box my={[3, 4]}>
       <NormalText>
         I'm Diogo. I'm a portuguese programmer and (aspiring) designer. I’m
         currently writing this from London but I live most of my time between
@@ -53,8 +53,8 @@ const About = () => (
       <NormalText>
         My favourite way to socialize is around the fireplace, call me old
         school, but there are few things better than talking while warm, relaxed
-        and amused by the fire. In the summer I like to be near the river, in
-        the mountains or near the sea.
+        and amused by the fire. In the summer I like to be in the mountains or
+        near the river or the sea.
       </NormalText>
       <NormalText>
         Work wise, I'm a fan of remote working. It gives more freedom to work,
