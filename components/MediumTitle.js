@@ -3,6 +3,7 @@ import theme from "../styles/theme";
 
 const MediumTitle = ({ children }) => (
   <Text
+    as="h2"
     sx={{
       mt: [3, 4],
       mb: [2, 3],

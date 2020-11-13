@@ -17,6 +17,12 @@ const HtmlHead = () => (
     <meta name="msapplication-config" content="/browserconfig.xml" />
     <meta name="msapplication-TileColor" content="#D6D6D6" />
     <meta name="theme-color" content="#D6D6D6"></meta>
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS"
+      href="/feed.xml"
+    />
   </Head>
 );
 

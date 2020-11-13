@@ -5,7 +5,7 @@
   "scripts": {
     "start": "next dev",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node ./.next/serverless/scripts/generate-rss.js",
     "next-start": "next start"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "react": "17.0.1",
     "react-dom": "^17.0.1",
     "remark-frontmatter": "^2.0.0",
+    "rss": "^1.2.2",
     "theme-ui": "^0.3.3",
     "unist-util-remove": "^2.0.1",
     "unist-util-visit": "^2.0.3",

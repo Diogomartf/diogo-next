@@ -1,8 +1,13 @@
-import { Image, Text } from "theme-ui";
+import { Flex, Image, Text } from "theme-ui";
 import theme from "../styles/theme";
 
 const MDImage = ({ src, alt, title }) => (
-  <div>
+  <Flex
+    sx={{
+      flexDirection: "column",
+      alignItems: "center",
+    }}
+  >
     <Image
       src={src}
       alt={alt}
@@ -14,8 +19,9 @@ const MDImage = ({ src, alt, title }) => (
       }}
     />
     <Text
+      my={1}
+      as="small"
       sx={{
-        mt: -2,
         textAlign: "center",
         color: theme.colors.gray,
         fontSize: [0],
@@ -23,7 +29,7 @@ const MDImage = ({ src, alt, title }) => (
     >
       {title}
     </Text>
-  </div>
+  </Flex>
 );
 
 export default MDImage;

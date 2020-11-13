@@ -2,6 +2,7 @@ import { Text } from "theme-ui";
 
 const BigTitle = ({ children }) => (
   <Text
+    as="h1"
     className="gradient-text"
     sx={{
       fontWeight: "bold",

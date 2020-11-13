@@ -34,6 +34,22 @@ const withMDX = require("@next/mdx")({
 
 module.exports = withMDX({
   pageExtensions: ["js", "mdx"],
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && isServer) {
+      const originalEntry = config.entry;
+
+      config.entry = async () => {
+        const entries = { ...(await originalEntry()) };
+
+        // These scripts can import components from the app and use ES modules
+        entries["./scripts/generate-rss.js"] = "./scripts/generate-rss.js";
+
+        return entries;
+      };
+    }
+
+    return config;
+  },
   env: {
     DOMAIN: "https://diogo.xyz",
   },

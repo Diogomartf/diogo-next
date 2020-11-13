@@ -2,6 +2,7 @@ import { Text } from "theme-ui";
 
 const NormalText = ({ children }) => (
   <Text
+    as="p"
     mt={[1, 2]}
     mb={["24px", 4]}
     sx={{
