@@ -8,6 +8,12 @@ import MDX from "../../components/MDX";
 import SocialMetaTags from "../../components/SocialMetaTags";
 import Container from "../../components/Container";
 import Hero from "../../components/Hero";
+import TagList from "../../components/TagsList";
+
+const tagsWithName = (tags) =>
+  tags.map((tag) => {
+    return { name: tag };
+  });
 
 const Post = ({ frontmatter, content }) => (
   <Container>
@@ -24,6 +30,9 @@ const Post = ({ frontmatter, content }) => (
         <Text variant="small" my={1}>
           {frontmatter.date}
         </Text>
+        <Box>
+          <TagList tags={tagsWithName(frontmatter.tags)} />
+        </Box>
         <Text variant="small">{frontmatter.excerpt}</Text>
       </Hero>
     </Box>
