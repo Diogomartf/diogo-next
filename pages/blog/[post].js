@@ -8,6 +8,12 @@ import MDX from "../../components/MDX";
 import SocialMetaTags from "../../components/SocialMetaTags";
 import Container from "../../components/Container";
 import Hero from "../../components/Hero";
+import TagList from "../../components/TagList";
+
+const tagsWithName = (tags) =>
+  tags.map((tag) => {
+    return { name: tag };
+  });
 
 const Post = ({ frontmatter, content }) => (
   <Container>
@@ -21,11 +27,11 @@ const Post = ({ frontmatter, content }) => (
     />
     <Box mt={[5, 6]} mb={[3, 4]}>
       <Hero title={frontmatter.title}>
-        <Text variant="small" my={1}>
+        <Text variant="small" mb={3}>
           {frontmatter.date}
         </Text>
-        <Text variant="small">{frontmatter.excerpt}</Text>
       </Hero>
+      <TagList tags={tagsWithName(frontmatter.tags)} />
     </Box>
     <Box pb={[4, 5]}>
       <article dangerouslySetInnerHTML={{ __html: content }} />
