@@ -2,7 +2,6 @@ import { Flex, Link, Box } from "theme-ui";
 import NextLink from "next/link";
 
 import Container from "./Container";
-import ToogleDarkMode from "./ToogleDarkMode";
 
 const Nav = () => (
   <Container>
@@ -44,13 +43,11 @@ const Nav = () => (
               sx={{
                 textDecoration: "none",
                 cursor: "pointer",
-                mr: [3, 4],
               }}
             >
               About
             </Link>
           </NextLink>
-          <ToogleDarkMode />
         </Flex>
       </Flex>
     </Box>
