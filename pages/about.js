@@ -16,7 +16,7 @@ const About = () => (
     <SocialMetaTags
       title="Hey! I'm Diogo"
       image="/images/about/diogo-camisa.jpg"
-      description="I'm a portuguese programmer and (aspiring) designer. I like to think of myself as curious."
+      description="I'm a portuguese programmer and (aspiring) designer. I like to think of myself as a curious person."
     />
     <Spacy>
       <Hero title="About">
