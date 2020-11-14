@@ -3,6 +3,7 @@ import { Box } from "theme-ui";
 import Container from "./Container";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import Spacy from "./Spacy";
 
 const Layout = ({ children }) => {
   return (
@@ -10,9 +11,9 @@ const Layout = ({ children }) => {
       <Nav />
       {children}
       <Container>
-        <Box my={[5, 6]}>
+        <Spacy>
           <Footer />
-        </Box>
+        </Spacy>
       </Container>
     </>
   );

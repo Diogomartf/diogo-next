@@ -6,6 +6,7 @@ import { getAllPosts, getSerializeableFrontmatter } from "../../lib/posts";
 
 import Container from "../../components/Container";
 import Hero from "../../components/Hero";
+import Spacy from "../../components/Spacy";
 
 export default function Blog({ posts }) {
   return (
@@ -13,35 +14,37 @@ export default function Blog({ posts }) {
       <Head>
         <title>{`Blog | Diogo Ferreira`}</title>
       </Head>
-      <Box my={[5, 6]}>
+      <Spacy>
         <Hero title="Thoughts">
           <Text variant="small">My journal.</Text>
           <Text variant="small">Life decisions. Curiosities. Experiences.</Text>
         </Hero>
-      </Box>
-      {Object.keys(posts)
-        .reverse()
-        .map((year) => (
-          <Box key={year} my={[4, 5]}>
-            <Text variant="midTitle">{year}</Text>
-            {posts[year] &&
-              posts[year].map((post) => (
-                <NextLink
-                  href="/blog/[post]"
-                  as={`/blog/${post.slug}`}
-                  key={post.slug}
-                  passHref
-                >
-                  <Link variant="card.blog" w={1} h={1}>
-                    <Text variant="blog">{post.title}</Text>
-                    <Text variant="small" my={1}>
-                      {post.date}
-                    </Text>
-                  </Link>
-                </NextLink>
-              ))}
-          </Box>
-        ))}
+      </Spacy>
+      <Spacy>
+        {Object.keys(posts)
+          .reverse()
+          .map((year) => (
+            <Box key={year} my={[4, 5]}>
+              <Text variant="midTitle">{year}</Text>
+              {posts[year] &&
+                posts[year].map((post) => (
+                  <NextLink
+                    href="/blog/[post]"
+                    as={`/blog/${post.slug}`}
+                    key={post.slug}
+                    passHref
+                  >
+                    <Link variant="card.blog" w={1} h={1}>
+                      <Text variant="blog">{post.title}</Text>
+                      <Text variant="small" my={1}>
+                        {post.date}
+                      </Text>
+                    </Link>
+                  </NextLink>
+                ))}
+            </Box>
+          ))}
+      </Spacy>
     </Container>
   );
 }

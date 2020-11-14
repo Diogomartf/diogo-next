@@ -6,6 +6,7 @@ import SocialMetaTags from "../components/SocialMetaTags";
 import Hero from "../components/Hero";
 import Container from "../components/Container";
 import NormalText from "../components/NomalText";
+import Spacy from "../components/Spacy";
 
 const About = () => (
   <Container>
@@ -17,12 +18,12 @@ const About = () => (
       image="/images/about/diogo-camisa.jpg"
       description="I'm a portuguese programmer and (aspiring) designer. I like to think of myself as curious."
     />
-    <Box mt={[5, 6]}>
+    <Spacy>
       <Hero title="About">
         <Text variant="small">Curious. Stubborn. Talktive.</Text>
         <Text variant="small">Born in 93.</Text>
       </Hero>
-    </Box>
+    </Spacy>
     <Box my={[3, 4]}>
       <NormalText>
         I'm Diogo. I'm a portuguese programmer and (aspiring) designer. I’m
@@ -70,7 +71,7 @@ const About = () => (
       </NormalText>
       <NormalText>Some pictures of my 27 years old self 👇️</NormalText>
     </Box>
-    <Box my={[4, 5]}>
+    <Spacy>
       <Box my={[2, 3]}>
         <Image
           objectFit="cover"
@@ -99,7 +100,7 @@ const About = () => (
           layout="responsive"
         />
       </Grid>
-    </Box>
+    </Spacy>
   </Container>
 );
 

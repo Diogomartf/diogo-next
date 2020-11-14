@@ -1,20 +1,21 @@
-import { Box, Text, Link } from "theme-ui";
+import { Text, Link } from "theme-ui";
+import NextLink from "next/link";
 
 import { getAllPosts, getSerializeableFrontmatter } from "../lib/posts";
 
 import Hero from "../components/Hero";
 import Container from "../components/Container";
-import NextLink from "next/link";
+import Spacy from "../components/Spacy";
 
 const Home = ({ posts }) => {
   return (
     <Container>
-      <Box my={[5, 6]}>
+      <Spacy>
         <Hero title="Diogo Ferreira">
           <Text variant="small">Thinker. Programmer.</Text>
         </Hero>
-      </Box>
-      <Box my={[5, 6]}>
+      </Spacy>
+      <Spacy>
         <Text variant="midTitle">Thoughts</Text>
         {posts.map((post) => (
           <NextLink
@@ -31,7 +32,7 @@ const Home = ({ posts }) => {
             </Link>
           </NextLink>
         ))}
-      </Box>
+      </Spacy>
     </Container>
   );
 };

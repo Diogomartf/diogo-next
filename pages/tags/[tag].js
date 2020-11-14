@@ -9,6 +9,7 @@ import SocialMetaTags from "../../components/SocialMetaTags";
 import Hero from "../../components/Hero";
 import Container from "../../components/Container";
 import TagList from "../../components/TagList";
+import Spacy from "../../components/Spacy";
 
 export default function Tag({ tag, tags, posts }) {
   return (
@@ -20,12 +21,12 @@ export default function Tag({ tag, tags, posts }) {
         title={`Diogo Ferreira | #${tag}`}
         description={`#${tag} • ${posts.length} posts`}
       />
-      <Box my={[5, 6]}>
+      <Spacy>
         <Hero title={`#${tag}`}>
           <TagList tags={tags} />
         </Hero>
-      </Box>
-      <Box my={[5, 6]}>
+      </Spacy>
+      <Spacy>
         <Text variant="midTitle">Articles</Text>
         {posts.map((post) => (
           <NextLink
@@ -42,7 +43,7 @@ export default function Tag({ tag, tags, posts }) {
             </Link>
           </NextLink>
         ))}
-      </Box>
+      </Spacy>
     </Container>
   );
 }

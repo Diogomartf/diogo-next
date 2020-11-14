@@ -3,7 +3,6 @@ import { Box } from "theme-ui";
 
 const Container = ({ children, ...props }) => (
   <Box
-    Box
     {...props}
     sx={{
       px: 4,
