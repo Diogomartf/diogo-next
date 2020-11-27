@@ -6,8 +6,8 @@ const colors = {
 };
 
 export default {
-  useColorSchemeMediaQuery: true,
   space: [0, 4, 8, 16, 24, 32, 64, 128, 256, 512],
+  useColorSchemeMediaQuery: true,
   colors: {
     primary: colors.gray,
     gray: colors.gray,
@@ -63,6 +63,7 @@ export default {
       borderRadius: "6px",
       cursor: "pointer",
       "&:hover": {
+        textDecoration: "none",
         bg: "blogBgHover",
       },
     },
