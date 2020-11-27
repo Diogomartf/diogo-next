@@ -7,7 +7,7 @@ const Container = ({ children, ...props }) => (
     sx={{
       px: 4,
       mx: "auto",
-      maxWidth: ["100%", "600px", "780px"],
+      maxWidth: ["100%", "600px", "760px"],
     }}
   >
     {children}

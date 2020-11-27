@@ -5,6 +5,7 @@ const BigTitle = ({ children }) => (
     as="h1"
     className="gradient-text"
     sx={{
+      fontFamily: "Space Grotesk",
       fontWeight: "bold",
       fontSize: [4, 5],
       mt: [3, 4],
