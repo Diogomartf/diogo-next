@@ -16,6 +16,7 @@ const MDImage = ({ src, alt, title }) => (
         objectPosition: "center",
         maxHeight: ["220px", "320px", "420px"],
         width: "100%",
+        borderRadius: "12px",
       }}
     />
     <Text
