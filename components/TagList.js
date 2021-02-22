@@ -1,6 +1,5 @@
 import React from "react";
 import NextLink from "next/link";
-import { Flex, Text, Link } from "theme-ui";
 
 const sortTags = (tags) => {
   return tags.sort(function (a, b) {
@@ -18,12 +17,7 @@ const sortTags = (tags) => {
 
 const TagList = ({ tags }) => {
   return (
-    <Flex
-      sx={{
-        flexFlow: "row wrap",
-        alignItems: "center",
-      }}
-    >
+    <div className="flex flex-wrap items-center">
       {sortTags(tags).map((tag) => (
         <NextLink
           href="/tags/[tag]"
@@ -31,12 +25,10 @@ const TagList = ({ tags }) => {
           key={tag.name}
           passHref
         >
-          <Link mr={3} mb={2} variant="links.footer">
-            #{tag.name}
-          </Link>
+          <a className="m-1 text-sm no-underline text-grayish">#{tag.name}</a>
         </NextLink>
       ))}
-    </Flex>
+    </div>
   );
 };
 

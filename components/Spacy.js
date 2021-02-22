@@ -1,10 +1,4 @@
-import { Box } from "theme-ui";
-
 // space Y -> spacy
-const Spacy = ({ children, ...props }) => (
-  <Box my={[5, 6]} {...props}>
-    {children}
-  </Box>
-);
+const Spacy = ({ children }) => <div className="my-8 md:my-16">{children}</div>;
 
 export default Spacy;

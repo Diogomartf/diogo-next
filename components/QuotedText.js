@@ -1,16 +1,7 @@
-import { Box } from "theme-ui";
-
 const QuotedText = ({ children }) => (
-  <Box
-    bg="rgb(155 155 155 / 6%)"
-    my={3}
-    p={[3, 4]}
-    sx={{
-      borderRadius: "12px",
-    }}
-  >
+  <div className="p-5 my-3 bg-gray-400 rounded-lg dark:bg-white bg-opacity-5 md:p-8">
     {children}
-  </Box>
+  </div>
 );
 
 export default QuotedText;

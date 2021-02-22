@@ -1,24 +1,25 @@
-import { Link } from "theme-ui";
-
 const Footer = () => (
   <>
-    <Link href="mailto:diogomf@hey.com" variant="links.footer">
+    <a
+      href="mailto:diogomf@hey.com"
+      className="mr-2 text-xs no-underline cursor-pointer hover:underline sm:text-sm text-grayish"
+    >
       diogomf@hey.com
-    </Link>
-    <Link
+    </a>
+    <a
       target="_blank"
       href="https://twitter.com/diogomartf"
-      variant="links.footer"
+      className="mr-2 text-xs no-underline cursor-pointer hover:underline sm:text-sm text-grayish"
     >
       Twitter
-    </Link>
-    <Link
+    </a>
+    <a
       target="_blank"
       href="https://github.com/Diogomartf"
-      variant="links.footer"
+      className="mr-2 text-xs no-underline cursor-pointer hover:underline sm:text-sm text-grayish"
     >
       Github
-    </Link>
+    </a>
   </>
 );
 

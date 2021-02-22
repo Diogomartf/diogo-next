@@ -1,6 +1,5 @@
 import ReactDOMServer from "react-dom/server";
 import Head from "next/head";
-import { Box, Text } from "theme-ui";
 
 import { getAllPosts, getSerializeableFrontmatter } from "../../lib/posts";
 
@@ -25,17 +24,15 @@ const Post = ({ frontmatter, content }) => (
       description={frontmatter.excerpt}
       image={frontmatter.image}
     />
-    <Box mt={[5, 6]} mb={[3, 4]}>
+    <div className="mt-6 mb-4 md:mt-7 md:mb-5">
       <Hero title={frontmatter.title}>
-        <Text variant="small" mb={3}>
-          {frontmatter.date}
-        </Text>
+        <div className="mb-3 text-sm text-grayish">{frontmatter.date}</div>
       </Hero>
       <TagList tags={tagsWithName(frontmatter.tags)} />
-    </Box>
-    <Box pb={[4, 5]}>
+    </div>
+    <div className="pb-5 md:pb-6" pb={[4, 5]}>
       <article dangerouslySetInnerHTML={{ __html: content }} />
-    </Box>
+    </div>
   </Container>
 );
 

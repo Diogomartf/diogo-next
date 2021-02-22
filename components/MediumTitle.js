@@ -1,19 +1,7 @@
-import { Text } from "theme-ui";
-import theme from "../styles/theme";
-
 const MediumTitle = ({ children }) => (
-  <Text
-    as="h2"
-    sx={{
-      mt: [3, 4],
-      mb: [2, 3],
-      fontSize: [3, 4],
-      fontWeight: "semibold",
-      color: theme.colors.gray,
-    }}
-  >
+  <h2 className="mt-3 mb-2 font-semibold md:mt-4 md:mb-3 text-grayish">
     {children}
-  </Text>
+  </h2>
 );
 
 export default MediumTitle;

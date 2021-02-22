@@ -1,4 +1,3 @@
-import { Box, Text, Grid } from "theme-ui";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -20,11 +19,11 @@ const About = () => (
     />
     <Spacy>
       <Hero title="About">
-        <Text variant="small">Curious. Stubborn. Talktive.</Text>
-        <Text variant="small">Born in 93.</Text>
+        <div className="text-sm text-grayish">Curious. Stubborn. Talktive.</div>
+        <div className="text-sm text-grayish">Born in 93.</div>
       </Hero>
     </Spacy>
-    <Box my={[3, 4]}>
+    <div className="my-3 md:my-4">
       <NormalText>
         I'm Diogo. I'm a portuguese programmer and (aspiring) designer. I’m
         currently writing this from London but I live most of my time between
@@ -70,9 +69,9 @@ const About = () => (
         lot. Also that software is eating the world.
       </NormalText>
       <NormalText>Some pictures of my 27 years old self 👇️</NormalText>
-    </Box>
+    </div>
     <Spacy>
-      <Box my={[2, 3]}>
+      <div className="my-2 md:my-3">
         <Image
           objectFit="cover"
           src="/images/about/diogo-camisa.jpg"
@@ -81,8 +80,8 @@ const About = () => (
           height="100%"
           layout="responsive"
         />
-      </Box>
-      <Grid gap={[2, 3]} columns="1fr 1fr">
+      </div>
+      <div className="grid grid-cols-2 gap-2 md:gap-3">
         <Image
           width="100%"
           height="100%"
@@ -99,7 +98,7 @@ const About = () => (
           objectFit="cover"
           layout="responsive"
         />
-      </Grid>
+      </div>
     </Spacy>
   </Container>
 );

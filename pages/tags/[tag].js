@@ -1,6 +1,4 @@
 import React from "react";
-import { Box, Link, Text } from "theme-ui";
-import NextLink from "next/link";
 import Head from "next/head";
 
 import { getSerializeableFrontmatter, getAllPostsByTag } from "../../lib/posts";
@@ -10,6 +8,7 @@ import Hero from "../../components/Hero";
 import Container from "../../components/Container";
 import TagList from "../../components/TagList";
 import Spacy from "../../components/Spacy";
+import BlogPostsList from "../../components/BlogList";
 
 export default function Tag({ tag, tags, posts }) {
   return (
@@ -27,22 +26,10 @@ export default function Tag({ tag, tags, posts }) {
         </Hero>
       </Spacy>
       <Spacy>
-        <Text variant="midTitle">Articles</Text>
-        {posts.map((post) => (
-          <NextLink
-            href="/blog/[post]"
-            as={`/blog/${post.slug}`}
-            key={post.slug}
-            passHref
-          >
-            <Link variant="card.blog" w={1} h={1}>
-              <Text variant="blog">{post.title}</Text>
-              <Text variant="small" my={1}>
-                {post.date}
-              </Text>
-            </Link>
-          </NextLink>
-        ))}
+        <div className="font-bold text-grayish md:text-lg dark:text-greenlight">
+          Articles
+        </div>
+        <BlogPostsList posts={posts} />
       </Spacy>
     </Container>
   );
