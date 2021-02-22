@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap");
 
+* {
+  box-sizing: border-box;
+  @apply bg-white dark:bg-black;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 blockquote {
@@ -22,8 +23,7 @@ blockquote {
 }
 
 a {
-  text-decoration: none;
-  color: #617d7d;
+  @apply no-underline text-grayish dark:text-greenlight;
 }
 
 a:hover {
@@ -34,4 +34,10 @@ a:hover {
   blockquote {
     margin: 42px 0;
   }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #616161 0%, #9bc5c3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

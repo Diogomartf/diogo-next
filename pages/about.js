@@ -1,4 +1,3 @@
-import { Box, Text, Grid } from "theme-ui";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -20,48 +19,40 @@ const About = () => (
     />
     <Spacy>
       <Hero title="About">
-        <Text variant="small">Curious. Stubborn. Talktive.</Text>
-        <Text variant="small">Born in 93.</Text>
+        <div className="text-sm text-grayish">Curious. Stubborn. Talktive.</div>
+        <div className="text-sm text-grayish">Born in 93.</div>
       </Hero>
     </Spacy>
-    <Box my={[3, 4]}>
+    <div className="my-3 md:my-4">
       <NormalText>
-        I'm Diogo. I'm a portuguese programmer and (aspiring) designer. I’m
-        currently writing this from London but I live most of my time between
-        Braga and Apúlia, both in the north of Portugal. I recently quit my job
-        to follow my dream of buiding a company.
+        I'm Diogo. I'm a portuguese programmer and designer. I’m currently near
+        the beach in Canidelo, Portugal. I recently quit my job to build{" "}
+        <a href="https://gymious.pt/">Gymious</a>.
       </NormalText>
       <NormalText>
-        I like to think of myself as curious. I'm always interested in
-        something, be it computers, programming, designing or mind related
-        stuff. How we think. How we behave. Why we do certain things. And how we
-        end up in certain mental conditions. Reflecting and acting on this
-        helped me overcome my worst times and made space for my best times.
+        I'm curious. I'm always interested in something. Be it computers,
+        programming, designing or thinking. I like to notice how I think. How I
+        behave. Why I do certain things. And how I end up in certain mental
+        conditions. Reflecting and acting on this helped me overcome my worst
+        times and made space for my best times.
       </NormalText>
       <NormalText>
         I really love the freedom to think loosely. My best ideas come when I'm
         not constrained.
       </NormalText>
       <NormalText>
-        I get most of my knowledge by reading books. Also talking to people.
-        Everyone can teach us something. I'm very lucky that I have handful of
-        smart people in my life (thank you!). Also doing different things or
-        doing things differently, helps me think different.
-      </NormalText>
-      <NormalText>
         I like to walk. I also enjoy sunny days. Getting vitamin D improves my
-        mood. I like to watch the sunset. I like to watch the stars in a dark
-        sky and wonder about the infinite.
+        mood. I like to watch the sunset.
       </NormalText>
       <NormalText>
-        Some of my secret mood boosters are waking up without an alarm, but also
-        doing a workout, sometimes in the gym other times outdoors.
+        Some of my secret mood boosters are waking up without an alarm and also
+        doing a workout.
       </NormalText>
       <NormalText>
-        My favourite way to socialize is around the fireplace, call me old
-        school, but there are few things better than talking while warm, relaxed
-        and amused by the fire. In the summer I like to be in the mountains or
-        near the river or the sea.
+        My favourite way to socialize is around the fireplace. There are few
+        things better than talking while warm, relaxed and amused by the fire. I
+        love being around nature. I like to be in the mountains or near the
+        river or the sea.
       </NormalText>
       <NormalText>
         Work wise, I'm a fan of remote working. It gives more freedom to work,
@@ -70,9 +61,9 @@ const About = () => (
         lot. Also that software is eating the world.
       </NormalText>
       <NormalText>Some pictures of my 27 years old self 👇️</NormalText>
-    </Box>
+    </div>
     <Spacy>
-      <Box my={[2, 3]}>
+      <div className="my-2 md:my-3">
         <Image
           objectFit="cover"
           src="/images/about/diogo-camisa.jpg"
@@ -81,8 +72,8 @@ const About = () => (
           height="100%"
           layout="responsive"
         />
-      </Box>
-      <Grid gap={[2, 3]} columns="1fr 1fr">
+      </div>
+      <div className="grid grid-cols-2 gap-2 md:gap-3">
         <Image
           width="100%"
           height="100%"
@@ -99,7 +90,7 @@ const About = () => (
           objectFit="cover"
           layout="responsive"
         />
-      </Grid>
+      </div>
     </Spacy>
   </Container>
 );

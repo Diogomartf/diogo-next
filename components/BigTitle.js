@@ -1,19 +1,7 @@
-import { Text } from "theme-ui";
-
 const BigTitle = ({ children }) => (
-  <Text
-    as="h1"
-    className="gradient-text"
-    sx={{
-      fontFamily: "Space Grotesk",
-      fontWeight: "bold",
-      fontSize: [4, 5],
-      mt: [3, 4],
-      mb: [2, 3],
-    }}
-  >
+  <h1 className="gradient-text text-3xl md:text-4xl mt-3 md:mt-4 mb-2 md:mb-3 font-bold font-grotesk">
     {children}
-  </Text>
+  </h1>
 );
 
 export default BigTitle;

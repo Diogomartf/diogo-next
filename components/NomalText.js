@@ -1,17 +1,7 @@
-import { Text } from "theme-ui";
-
 const NormalText = ({ children }) => (
-  <Text
-    as="p"
-    mt={[1, 2]}
-    mb={[3, "24px"]}
-    sx={{
-      fontSize: [2, 3],
-      lineHeight: ["28px", "32px"],
-    }}
-  >
+  <p className="mt-1 mb-3 bg-transparent md:mt-2 md:mb-6 md:text-lg dark:text-whitish">
     {children}
-  </Text>
+  </p>
 );
 
 export default NormalText;

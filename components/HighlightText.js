@@ -1,17 +1,5 @@
-import { Text } from "theme-ui";
-
 const HighLightText = ({ children }) => (
-  <Text
-    as="p"
-    my={[4, 5]}
-    sx={{
-      textAlign: "center",
-      fontSize: [3, 4],
-      lineHeight: ["28px", "32px"],
-    }}
-  >
-    {children}
-  </Text>
+  <p className="my-5 text-lg text-center md:text-xl md:my-6">{children}</p>
 );
 
 export default HighLightText;

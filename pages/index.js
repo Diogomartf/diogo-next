@@ -1,37 +1,23 @@
-import { Text, Link } from "theme-ui";
-import NextLink from "next/link";
-
 import { getAllPosts, getSerializeableFrontmatter } from "../lib/posts";
 
 import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Spacy from "../components/Spacy";
+import BlogPostsList from "../components/BlogList";
 
 const Home = ({ posts }) => {
   return (
     <Container>
       <Spacy>
         <Hero title="Diogo Ferreira">
-          <Text variant="small">Thinker. Programmer.</Text>
+          <div className="text-sm text-grayish">Thinker. Programmer.</div>
         </Hero>
       </Spacy>
       <Spacy>
-        <Text variant="midTitle">Thoughts</Text>
-        {posts.map((post) => (
-          <NextLink
-            href="/blog/[post]"
-            as={`/blog/${post.slug}`}
-            key={post.slug}
-            passHref
-          >
-            <Link variant="card.blog" w={1} h={1}>
-              <Text variant="blog">{post.title}</Text>
-              <Text variant="small" my={1}>
-                {post.date}
-              </Text>
-            </Link>
-          </NextLink>
-        ))}
+        <div className="font-bold text-grayish md:text-lg dark:text-greenlight">
+          Thoughts
+        </div>
+        <BlogPostsList posts={posts} />
       </Spacy>
     </Container>
   );

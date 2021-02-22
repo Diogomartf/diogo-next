@@ -1,56 +1,28 @@
-import { Flex, Link, Box } from "theme-ui";
 import NextLink from "next/link";
 
 import Container from "./Container";
 
 const Nav = () => (
   <Container>
-    <Box py={3}>
-      <Flex
-        sx={{
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
+    <div className="py-6">
+      <div className="flex items-center justify-between">
         <NextLink href="/">
-          <Link
-            className="circle-logo"
-            sx={{
-              cursor: "pointer",
-            }}
-          ></Link>
+          <a className="cursor-pointer circle-logo"></a>
         </NextLink>
-        <Flex
-          sx={{
-            alignItems: "center",
-          }}
-        >
+        <div className="flex items-center space-x-4 md:space-x-5">
           <NextLink href="/blog" passHref>
-            <Link
-              variant="text.midTitle"
-              sx={{
-                textDecoration: "none",
-                cursor: "pointer",
-                mr: [3, 4],
-              }}
-            >
+            <a className="font-bold no-underline cursor-pointer dark:text-greenlight md:text-lg">
               Blog
-            </Link>
+            </a>
           </NextLink>
           <NextLink href="/about" passHref>
-            <Link
-              variant="text.midTitle"
-              sx={{
-                textDecoration: "none",
-                cursor: "pointer",
-              }}
-            >
+            <a className="font-bold no-underline cursor-pointer dark:text-greenlight md:text-lg">
               About
-            </Link>
+            </a>
           </NextLink>
-        </Flex>
-      </Flex>
-    </Box>
+        </div>
+      </div>
+    </div>
   </Container>
 );
 

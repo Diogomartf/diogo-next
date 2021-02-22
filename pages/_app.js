@@ -1,7 +1,6 @@
-import { ThemeProvider } from "theme-ui";
-
+import { ThemeProvider } from "next-themes";
+import "tailwindcss/tailwind.css";
 import "../styles/main.css";
-import theme from "../styles/theme";
 
 import HtmlHead from "../components/HtmlHead";
 import MDX from "../components/MDX";
@@ -10,7 +9,7 @@ import Layout from "../components/Layout";
 
 const app = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <HtmlHead />
       <SocialMetaTags />
       <Layout>

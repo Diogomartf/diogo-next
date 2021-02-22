@@ -1,12 +1,11 @@
-import { Box, Text, Link } from "theme-ui";
 import Head from "next/head";
-import NextLink from "next/link";
 
 import { getAllPosts, getSerializeableFrontmatter } from "../../lib/posts";
 
 import Container from "../../components/Container";
 import Hero from "../../components/Hero";
 import Spacy from "../../components/Spacy";
+import BlogPostCard from "../../components/BlogPostCard";
 
 export default function Blog({ posts }) {
   return (
@@ -16,35 +15,27 @@ export default function Blog({ posts }) {
       </Head>
       <Spacy>
         <Hero title="Thoughts">
-          <Text variant="small">My journal.</Text>
-          <Text variant="small">Life decisions. Curiosities. Experiences.</Text>
+          <div className="text-sm text-grayish">My journal.</div>
+          <div className="text-sm text-grayish">
+            Life decisions. Curiosities. Experiences.
+          </div>
         </Hero>
       </Spacy>
-      <Spacy>
+      <div className="space-y-5 md:space-y-6">
         {Object.keys(posts)
           .reverse()
           .map((year) => (
-            <Box key={year} my={[4, 5]}>
-              <Text variant="midTitle">{year}</Text>
+            <div key={year} className="space-y-2">
+              <div className="font-bold text-grayish md:text-lg dark:text-greenlight">
+                {year}
+              </div>
               {posts[year] &&
                 posts[year].map((post) => (
-                  <NextLink
-                    href="/blog/[post]"
-                    as={`/blog/${post.slug}`}
-                    key={post.slug}
-                    passHref
-                  >
-                    <Link variant="card.blog" w={1} h={1}>
-                      <Text variant="blog">{post.title}</Text>
-                      <Text variant="small" my={1}>
-                        {post.date}
-                      </Text>
-                    </Link>
-                  </NextLink>
+                  <BlogPostCard key={post.slug} post={post} />
                 ))}
-            </Box>
+            </div>
           ))}
-      </Spacy>
+      </div>
     </Container>
   );
 }

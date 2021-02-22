@@ -1,17 +1,12 @@
 import PropTypes from "prop-types";
-import { Box } from "theme-ui";
 
 const Container = ({ children, ...props }) => (
-  <Box
+  <div
+    className="container w-full px-6 mx-auto md:max-w-2xl lg:max-w-3xl"
     {...props}
-    sx={{
-      px: 4,
-      mx: "auto",
-      maxWidth: ["100%", "600px", "760px"],
-    }}
   >
     {children}
-  </Box>
+  </div>
 );
 
 Container.propTypes = {
