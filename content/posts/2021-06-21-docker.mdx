@@ -1,0 +1,202 @@
+---
+title: It stared with Docker
+date: 2021-06-21
+excerpt: My deep dive on Docker and all the things to the kernel.
+tags:
+  - notes
+  - programming
+---
+
+## What did I know about Docker?
+
+I knew that was somethings that was mainly configuration that was used mainly on servers. It was somehow isolated and they call it containers. Also the whale on the logo. It's very distinct. I like it.
+
+![Docker moby logo](/images/posts/docker.png)
+
+But I was never curious about Docker. But our servers at Gymious our servers ended up running on Docker. After we moved from Heroku to AWS. Paulo was the main responsible for deploying our server to AWS and setup docker. And been running smothly the last couple of months.
+
+I was used to Heroku, easy-of-use features, and didn't care too much what was behind as my needs of changing the system were satisfied. But since we deployed to AWS I sensed the need of understanding this new system.
+
+But I was not yet commited to dive deeper. But last week I felt the need. I need to run a command everytime we build our aplication. How can I add this command? I talked with Paulo and the solution was simply adding a line to the entrypoint.sh file. That was the trigger to understand the tool. Knowing this tool makes me think better of our system.
+
+This text describes my research. That usally means DuckDuckGo searches and wikipedia articles. By the flux I think about them.
+
+# What is docker?
+
+import QuotedText from "../../components/QuotedText";
+
+<QuotedText>
+
+Docker is a set of <span className="highlight">platform as a service (PaaS)</span> products that use<span className="highlight">OS-level virtualization to deliver software in packages called containers</span>. <span className="highlight">Containers are isolated from one another and bundle their own software, libraries and configuration files;</span>they can communicate with each other through well-defined channels. Because<span className="highlight"> all of the containers share the services of a single operating system kernel, they use fewer resources than virtual machines</span>.
+
+- [Wikipedia](<https://en.wikipedia.org/wiki/Docker_(software)>)
+
+</QuotedText>
+
+This text contains quite a few key words, so let's dive into them:
+
+# platform as a service (PaaS)
+
+<QuotedText>
+
+Platform as a service (PaaS) or application platform as a service (aPaaS) or platform-based service is a category of cloud computing services that allows customers to provision, instantiate, run, and manage a modular bundle comprising a computing platform and one or more applications, without the complexity of building and maintaining the infrastructure typically associated with developing and launching the application(s); and to allow developers to create, develop, and package such software bundles.
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Platform_as_a_service)
+
+</QuotedText>
+
+PaaS can be delivered in three ways:
+
+<QuotedText>
+
+- As a public cloud service from a provider, where the consumer controls
+  software deployment with minimal configuration options, and the provider
+  provides the networks, servers, storage, operating system (OS), middleware
+  (e.g. .NET runtime, integration, etc.), database and other services to host
+  the consumer's application.
+  <br />
+- As a private service (software or appliance) behind a firewall.
+  <br />- As software deployed on a public infrastructure as a service.
+
+</QuotedText>
+
+## advantages
+
+The advantages of PaaS are primarily that it allows for higher-level programming with dramatically reduced complexity;
+
+## Disadvantages
+
+Disadvantages of various PaaS providers as cited by their users include increased pricing at larger scales, lack of operational features, reduced control, and the difficulties of traffic routing systems.
+
+# OS-level virtualization
+
+OS-level virtualization is an operating system paradigm in which the kernel allows the existence of multiple isolated user space instances. Such instances, called containers (LXC, Solaris containers, Docker), Zones (Solaris containers), virtual private servers (OpenVZ), partitions, virtual environments (VEs), virtual kernels (DragonFly BSD), or jails (FreeBSD jail or chroot jail), may look like real computers from the point of view of programs running in them.
+
+A computer program running on an ordinary operating system can see all resources (connected devices, files and folders, network shares, CPU power, quantifiable hardware capabilities) of that computer. However, programs running inside of a container can only see the container's contents and devices assigned to the container.
+
+## On ordinary operating systems for personal computers
+
+A computer program can see (even though it might not be able to access) all the system's resources. They include:
+
+- Hardware capabilities that can be employed, such as the CPU and the network connection
+- Data that can be read or written, such as files, folders and network shares
+- Connected peripherals it can interact with, such as webcam, printer, scanner, or fax
+
+The operating system may be able to allow or deny access to such resources based on which program requests them and the user account in the context of which it runs.
+
+The operating system may also hide those resources, so that when the computer program enumerates them, they do not appear in the enumeration results. Nevertheless, from a programming point of view, <span className="highlight">the computer program has interacted with those resources and the operating system has managed an act of interaction</span>.
+
+## With operating-system-virtualization, or containerization
+
+it is possible to run programs within containers, to which only parts of these resources are allocated. <span className="highlight">A program expecting to see the whole computer, once run inside a container, can only see the allocated resources and believes them to be all that is available</span>.
+
+Several containers can be created on each operating system, to each of which a subset of the computer's resources is allocated. Each container may contain any number of computer programs. These programs may run concurrently or separately, and may even interact with one another.
+
+# Kernel
+
+<QuotedText>
+
+The kernel is a computer program at the core of a computer's operating system
+and has complete control over everything in the system. It is the "portion of
+the operating system code that is always resident in memory", and facilitates
+interactions between hardware and software components. On most systems, the
+kernel is one of the first programs loaded on startup (after the bootloader).
+It handles the rest of startup as well as memory, peripherals, and
+input/output (I/O) requests from software, translating them into
+data-processing instructions for the central processing unit (CPU).
+
+- [Wikipedia](<https://en.wikipedia.org/wiki/Kernel_(operating_system)>)
+
+</QuotedText>
+
+![Kernel diagram](/images/posts/kernel.png)
+
+## Random-access memory (RAM)
+
+RAM is used to store both program instructions and data. Typically, both need to be present in memory in order for a program to execute. Often multiple programs will want access to memory, frequently demanding more memory than the computer has available. The kernel is responsible for deciding which memory each process can use, and determining what to do when not enough memory is available.
+
+## I/O devices
+
+I/O devices include such peripherals as keyboards, mice, disk drives, printers, USB devices, network adapters, and display devices. The kernel allocates requests from applications to perform I/O to an appropriate device and provides convenient methods for using the device (typically abstracted to the point where the application does not need to know implementation details of the device).
+
+## Memory management
+
+The kernel has full access to the system's memory and must allow processes to safely access this memory as they require it. Often the first step in doing this is virtual addressing, usually achieved by paging and/or segmentation. Virtual addressing allows the kernel to make a given physical address appear to be another address, the virtual address. Virtual address spaces may be different for different processes; the memory that one process accesses at a particular (virtual) address may be different memory from what another process accesses at the same address. This allows every program to behave as if it is the only one (apart from the kernel) running and thus prevents applications from crashing each other.
+
+## Resource management
+
+Key aspects necessary in resource management are defining the execution domain (address space) and the protection mechanism used to mediate access to the resources within a domain.[5] Kernels also provide methods for synchronization and inter-process communication (IPC). These implementations may be within the kernel itself or the kernel can also rely on other processes it is running. Although the kernel must provide IPC in order to provide access to the facilities provided by each other, kernels must also provide running programs with a method to make requests to access these facilities. The kernel is also responsible for context switching between processes or threads.
+
+## Device management
+
+To perform useful functions, processes need access to the peripherals connected to the computer, which are controlled by the kernel through device drivers. A device driver is a computer program that enables the operating system to interact with a hardware device. It provides the operating system with information of how to control and communicate with a certain piece of hardware. The driver is an important and vital piece to a program application. The design goal of a driver is abstraction; the function of the driver is to translate the OS-mandated abstract function calls (programming calls) into device-specific calls. In theory, the device should work correctly with the suitable driver. Device drivers are used for such things as video cards, sound cards, printers, scanners, modems, and LAN cards.
+
+## System calls
+
+In computing, a system call is how a process requests a service from an operating system's kernel that it does not normally have permission to run. System calls provide the interface between a process and the operating system. Most operations interacting with the system require permissions not available to a user-level process, e.g., I/O performed with a device present on the system, or any form of communication with other processes requires the use of system calls.
+
+A system call is a mechanism that is used by the application program to request a service from the operating system. They use a machine-code instruction that causes the processor to change mode. An example would be from supervisor mode to protected mode. This is where the operating system performs actions like accessing hardware devices or the memory management unit. Generally the operating system provides a library that sits between the operating system and normal user programs. Usually it is a C library such as Glibc or Windows API. The library handles the low-level details of passing information to the kernel and switching to supervisor mode. System calls include close, open, read, wait and write.
+
+To actually perform useful work, a process must be able to access the services provided by the kernel. This is implemented differently by each kernel, but most provide a C library or an API, which in turn invokes the related kernel functions.
+
+## What is resident memory?
+
+Memory resident == Permanently in memory.
+
+Normally, a computer does not have enough memory to hold all the programs you use. When you want to run a program, therefore, the operating system is obliged to free some memory by copying data or programs from main memory to a disk. This process is known as swapping.
+
+## Consequently, what does memory resident mean?
+
+A memory-resident program has the ability to stay in the computer's memory after execution and to continuously run. Typically backdoors stay in memory to await commands, as do .
+
+## Considering this, what is resident memory in Linux?
+
+VSZ is the Virtual Memory Size. It includes all memory that the process can access, including memory that is swapped out, memory that is allocated, but not used, and memory that is from shared libraries.
+
+## What do you mean by virtual memory?
+
+In computing, virtual memory, or virtual storage is a memory management technique that provides an "idealized abstraction of the storage resources that are actually available on a given machine" which "creates the illusion to users of a very large (main) memory".
+
+Virtual memory is a memory management capability of an operating system (OS) that uses hardware and software to allow a computer to compensate for physical memory shortages by temporarily transferring data from random access memory (RAM) to disk storage.
+
+https://en.wikipedia.org/wiki/Virtual_memory
+
+## The benefits of virtual memory
+
+Include freeing applications from having to manage a shared memory space, ability to share memory used by libraries between processes, increased security due to memory isolation, and being able to conceptually use more memory than might be physically available, using the technique of paging or segmentation.
+
+Virtual memory makes application programming easier by hiding fragmentation of physical memory; by delegating to the kernel the burden of managing the memory hierarchy.
+
+## Will the entire operating system reside in the main memory?
+
+It is not a storage device. Note that the (typical) CPU requires that the code that it executes must reside in main memory. Therefore the (image of the) operating system must be transferred (aka loaded) into main memory for execution. So for operational use of the computer, the OS resides in RAM.
+
+## What is non resident portion of operating system?
+
+The kernel is memory resident, which means it remains in memory while the computer is running. Other parts of the operating system are nonresident, that is, these instructions remain on a storage medium until they are needed. Or you can say that Kernel is the central module of an operating system.
+
+## What is low memory and high memory in operating system?
+
+High memory is memory that is not permanently mapped into the kernel's address space. Low memory is the inverse: Memory that is always mapped into the kernel's address space. In an ideal world, all memory is permanently mappable.
+
+## The three major activities of an operating system in connection with regard to memory management are:
+
+- Keep track of which parts of memory are currently being used and by whom.
+
+- Decide which processes are to be loaded into memory when memory space becomes available.
+
+- Allocate and de allocate memory space as needed.
+
+## What is working set memory?
+
+Working set is a concept in computer science which defines the amount of memory that a process requires in a given time interval.
+
+[What is resident memory? -find my answer](https://findanyanswer.com/what-is-resident-memory)
+
+## Copy-on-write (COW)
+
+Sometimes referred to as implicit sharing[1] or shadowing,[2] is a resource-management technique used in computer programming to efficiently implement a "duplicate" or "copy" operation on modifiable resources.[3] If a resource is duplicated but not modified, it is not necessary to create a new resource; the resource can be shared between the copy and the original. Modifications must still create a copy, hence the technique: the copy operation is deferred until the first write. By sharing resources in this way, it is possible to significantly reduce the resource consumption of unmodified copies, while adding a small overhead to resource-modifying operations.
+
+## Containers
+
+## Image
