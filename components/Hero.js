@@ -1,9 +1,11 @@
 import BigTitle from "./BigTitle";
 
-const Hero = ({ title, children }) => (
+const Hero = ({ title, description }) => (
   <>
     <BigTitle>{title}</BigTitle>
-    {children && <div className="my-2">{children}</div>}
+    {description && (
+      <div className="my-3 text-sm text-grayish">{description}</div>
+    )}
   </>
 );
 

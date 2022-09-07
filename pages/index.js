@@ -9,9 +9,7 @@ const Home = ({ posts }) => {
   return (
     <Container>
       <Spacy>
-        <Hero title="Diogo Ferreira">
-          <div className="text-sm text-grayish">Thinker. Programmer.</div>
-        </Hero>
+        <Hero title="Diogo Ferreira" description="Thinker. Dreamer" />
       </Spacy>
       <Spacy>
         <div className="font-bold text-grayish md:text-lg dark:text-greenlight">
