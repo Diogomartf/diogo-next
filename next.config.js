@@ -16,6 +16,7 @@ function extractFrontmatter() {
 
 function exportFrontmatter() {
   return (tree, file) => {
+      console.log(file);
     const value = JSON.stringify(file.data.frontmatter, null, 2);
     const frontmatter = builder(
       "export",
