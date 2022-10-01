@@ -11,7 +11,7 @@ export default function Blog({ posts }) {
   return (
     <Container>
       <Head>
-        <title>{`Blog | Diogo Ferreira`}</title>
+        <title>Blog | Diogo Ferreira</title>
       </Head>
       <Spacy>
         <Hero title="Thoughts">

@@ -10,7 +10,7 @@ import Spacy from "../components/Spacy";
 const About = () => (
   <Container>
     <Head>
-      <title>{`About | Diogo Ferreira`}</title>
+      <title>About | Diogo Ferreira</title>
     </Head>
     <SocialMetaTags
       title="Hey! I'm Diogo"
