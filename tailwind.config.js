@@ -2,15 +2,18 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "media",
+  darkMode: "class",
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     colors: {
       transparent: "transparent",
       current: "currentColor",
       black: "#0D0D0D",
       white: colors.white,
-      gray: colors.trueGray,
+      gray: colors.neutral,
       green: colors.green,
       yellow: colors.amber,
     },
@@ -26,9 +29,6 @@ module.exports = {
         whitish: "#F9F9F9",
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };
