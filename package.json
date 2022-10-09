@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
-    "@mdx-js/loader": "^1.6.21",
+    "@mdx-js/loader": "^2.1.4",
     "@next/mdx": "^10.0.1",
     "fs": "0.0.1-security",
     "next": "^10.0.7",
