@@ -19,72 +19,106 @@ const About = () => (
     />
     <Spacy>
       <Hero title="About">
-        <div className="text-sm text-grayish">Curious. Stubborn. Talktive.</div>
-        <div className="text-sm text-grayish">Born in 93.</div>
+        <div className="text-sm text-grayish">A few things about me.</div>
       </Hero>
     </Spacy>
     <div className="my-3 md:my-4">
       <NormalText>
-        I'm Diogo. I'm a portuguese programmer and designer. I’m currently near
-        the beach in Canidelo, Portugal. I recently quit my job to build{" "}
-        <a href="https://gymious.pt/">Gymious</a>.
+        I'm Diogo. I'm a portuguese programmer and designer.
       </NormalText>
       <NormalText>
-        I'm curious. I'm always interested in something. Be it computers,
-        programming, designing or thinking. I like to notice how I think. How I
-        behave. Why I do certain things. And how I end up in certain mental
-        conditions. Reflecting and acting on this helped me overcome my worst
-        times and made space for my best times.
+        Co-founder of <a href="https://gymious.pt/">Gymious</a>, a portuguese
+        gyms marketplace. Also been involved in web3, co-created a NFT
+        collectible, <a href="https://funky.pizza/">Funky Pizza</a>, and I'm
+        also a contributor to DXdao.
       </NormalText>
       <NormalText>
-        I really love the freedom to think loosely. My best ideas come when I'm
-        not constrained.
+        I'm curious. I really love the freedom to think loosely. My best ideas
+        come when I'm not constrained.
       </NormalText>
       <NormalText>
-        I like to walk. I also enjoy sunny days. Getting vitamin D improves my
-        mood. I like to watch the sunset.
+        I like to walk. I enjoy sunny days. Afternoons in the park.
       </NormalText>
-      <NormalText>
-        Some of my secret mood boosters are waking up without an alarm and also
-        doing a workout.
-      </NormalText>
-      <NormalText>
-        My favourite way to socialize is around the fireplace. There are few
-        things better than talking while warm, relaxed and amused by the fire. I
-        love being around nature. I like to be in the mountains or near the
-        river or the sea.
-      </NormalText>
-      <NormalText>
-        Work wise, I'm a fan of remote working. It gives more freedom to work,
-        and I'm all in on that. In my experience the best work happens outside
-        of the work schedule. I believe that small driven teams can accomplish a
-        lot. Also that software is eating the world.
-      </NormalText>
-      <NormalText>Some pictures of my 27 years old self 👇️</NormalText>
+      <NormalText>I love being around nature. I love fireplaces.</NormalText>
     </div>
     <Spacy>
-      <div className="my-2 md:my-3">
+      <div className="grid grid-cols-2 gap-2 md:gap-3">
+        <Image
+          objectFit="cover"
+          src="/images/about/ceu.jpg"
+          alt="apulia lusco-fusco"
+          width="100%"
+          height="100%"
+          layout="responsive"
+        />
         <Image
           objectFit="cover"
           src="/images/about/diogo-camisa.jpg"
-          alt="Diogo enjoying the view in Fafe."
+          alt="Diogo com a camisa verde"
           width="100%"
           height="100%"
           layout="responsive"
         />
-      </div>
-      <div className="grid grid-cols-2 gap-2 md:gap-3">
         <Image
           width="100%"
           height="100%"
-          src="/images/about/diogo-at-sunset.jpg"
-          alt="Diogo at the sunset in Aveiro."
+          src="/images/about/pizza.jpg"
+          alt="pizza albufeira"
           objectFit="cover"
           layout="responsive"
         />
         <Image
-          src="/images/about/diogo-costas.jpg"
-          alt="Diogo enjoying the view in Fafe"
+          src="/images/about/tree.jpg"
+          alt="Special tree in Guia"
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          layout="responsive"
+        />
+        <Image
+          src="/images/about/colombia.jpg"
+          alt="Diogo in La Calendelaria"
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          layout="responsive"
+        />
+        <Image
+          src="/images/about/rose.jpg"
+          alt="Rose cafe in Ericeira"
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          layout="responsive"
+        />
+
+        <Image
+          src="/images/about/chair.jpg"
+          alt="Coffee and drafts in London"
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          layout="responsive"
+        />
+        <Image
+          src="/images/about/conf.jpg"
+          alt="Infinite Hackthon"
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          layout="responsive"
+        />
+        <Image
+          src="/images/about/beach.jpg"
+          alt="S.Rafael beach in Algarve"
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          layout="responsive"
+        />
+        <Image
+          src="/images/about/car.jpg"
+          alt="Diogo in the passenger seat"
           width="100%"
           height="100%"
           objectFit="cover"
