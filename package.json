@@ -13,7 +13,7 @@
     "@mdx-js/loader": "^1.6.21",
     "@next/mdx": "^10.0.1",
     "fs": "0.0.1-security",
-    "next": "^10.0.7",
+    "next": "^12.3.1",
     "next-themes": "^0.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
